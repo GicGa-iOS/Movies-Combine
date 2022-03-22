@@ -12,22 +12,13 @@ struct ContentView: View {
     @StateObject private var viewModel = PopularMoviesViewModel()
 
     var body: some View {
-        NavigationView{
-            List{
-                ForEach(viewModel.movies, id: \.id) { movie in
-                    Text(movie.title)
-                }
-            }
-            .navigationTitle("Popular movies")
-            .navigationBarTitleDisplayMode(.automatic)
-            .onAppear {
-                fetchData()
-            }
-        }
-    }
-
-    private func fetchData() {
-        viewModel.fetchMovies()
+        PopularMoviesList(
+            repos: viewModel.state.repos,
+            isLoading: viewModel.state.canLoadNextPage,
+            onScrolledAtBottom: viewModel.fetchMoviesNextPageIfPossible
+        )
+        .background(Color.black)
+        .onAppear(perform: viewModel.fetchMoviesNextPageIfPossible)
     }
 }
 

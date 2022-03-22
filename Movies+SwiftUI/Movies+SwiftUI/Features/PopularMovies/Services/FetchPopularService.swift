@@ -4,7 +4,7 @@ import Foundation
 struct FetchPopularService {
 
     static func fetchPopularMovies(page: String) -> AnyPublisher<PopularMovie, Error> {
-        guard let url = URL(string: "https://api.themoviedb.org/3/movie/popular?api_key=\(Keys.Apiv3)&language=en-US&page=\(page)") else {
+        guard let url = URL(string: APIConstants.baseURL+"/movie/popular?api_key=\(Keys.Apiv3)&language=\(APIConstants.language)&page=\(page)") else {
             return Fail(error: APIError.invalidRequestError("Invalid URL"))
                 .eraseToAnyPublisher()
         }
