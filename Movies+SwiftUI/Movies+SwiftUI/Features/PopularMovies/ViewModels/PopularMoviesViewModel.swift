@@ -3,26 +3,36 @@ import Foundation
 
 class PopularMoviesViewModel: ObservableObject {
 
-    @Published var movies = [Result]()
-
+    @Published private(set) var state = State()
+    private var subscriptions = Set<AnyCancellable>()
     // 2
-    private var service = FetchPopularService()
-    private var page = 1
-    private var currentLastId: Int? = nil
-    private var cancellable: AnyCancellable?
 
-    func fetchMovies() {
-        cancellable = service.fetchPopularMovies(page: "\(page)")
-            .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: { completion in
-                switch completion {
-                case .finished:
-                    print("fetch popular moview finished")
-                case .failure(let error):
-                    print(error)
-                }
-            }, receiveValue: { movies in
-                self.movies.append(contentsOf: movies)
-            })
+    func fetchMoviesNextPageIfPossible() {
+        guard state.canLoadNextPage else { return }
+        FetchPopularService.fetchPopularMovies(page: "\(state.page)")
+            .sink(receiveCompletion: onReceive,
+                  receiveValue: onReceive)
+            .store(in: &subscriptions)
+    }
+
+    private func onReceive(_ completion: Subscribers.Completion<Error>) {
+        switch completion {
+        case .finished:
+            break
+        case .failure:
+            state.canLoadNextPage = false
+        }
+    }
+
+    private func onReceive(_ batch: PopularMovie) {
+        state.repos += batch.results
+        state.page += 1
+        state.canLoadNextPage = batch.totalPages >= state.page
+    }
+
+    struct State {
+        var repos: [Result] = []
+        var page: Int = 1
+        var canLoadNextPage = true
     }
 }

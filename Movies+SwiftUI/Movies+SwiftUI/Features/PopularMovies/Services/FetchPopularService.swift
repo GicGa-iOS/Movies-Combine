@@ -3,7 +3,7 @@ import Foundation
 
 struct FetchPopularService {
 
-    func fetchPopularMovies(page: String = "1") -> AnyPublisher<[Result], Error> {
+    static func fetchPopularMovies(page: String) -> AnyPublisher<PopularMovie, Error> {
         guard let url = URL(string: "https://api.themoviedb.org/3/movie/popular?api_key=\(Keys.Apiv3)&language=en-US&page=\(page)") else {
             return Fail(error: APIError.invalidRequestError("Invalid URL"))
                 .eraseToAnyPublisher()
@@ -61,7 +61,7 @@ struct FetchPopularService {
                     throw APIError.decodingError(error)
                 }
             }
-            .map(\.results)// If an specific keypath return is necessary
+            .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
 }
