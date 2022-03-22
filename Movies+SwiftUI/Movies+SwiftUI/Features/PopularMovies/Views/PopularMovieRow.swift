@@ -1,5 +1,4 @@
 import SwiftUI
-import NukeUI
 
 struct PopularMovieRow: View {
 
@@ -10,7 +9,7 @@ struct PopularMovieRow: View {
     var body: some View {
         ZStack(alignment: .bottomLeading) {
             if let url = URL(string: APIConstants.imgBaseURL+(movie.posterPath ?? "")) {
-                makeImage(url: url)
+                ImageLoader.makeImage(url: url)
             }
             ProgressBar(progress: $progressValue)
                 .frame(width: 50.0, height: 50.0)
@@ -31,11 +30,6 @@ struct PopularMovieRow: View {
                     EmptyView()
                 }
             ))
-    }
-
-    // This is where the image view is created.
-    func makeImage(url: URL) -> some View {
-        LazyImage(source: url, resizingMode: .aspectFit)
     }
 }
 

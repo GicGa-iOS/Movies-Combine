@@ -37,6 +37,7 @@
 		AB599F7227EA8C8500DB4C8E /* View+statusBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB599F7127EA8C8500DB4C8E /* View+statusBarStyle.swift */; };
 		AB599F7427EA8CC800DB4C8E /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB599F7327EA8CC800DB4C8E /* RootView.swift */; };
 		AB599F7627EA8D1900DB4C8E /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB599F7527EA8D1900DB4C8E /* HostingController.swift */; };
+		AB599F7927EA8F6F00DB4C8E /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB599F7827EA8F6F00DB4C8E /* ImageLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		AB599F7127EA8C8500DB4C8E /* View+statusBarStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+statusBarStyle.swift"; sourceTree = "<group>"; };
 		AB599F7327EA8CC800DB4C8E /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		AB599F7527EA8D1900DB4C8E /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		AB599F7827EA8F6F00DB4C8E /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,10 +238,11 @@
 		AB28A58527E4F5E50019A330 /* ReusableComponents */ = {
 			isa = PBXGroup;
 			children = (
-				AB58E92327EA30C600CC3FCB /* Spinner.swift */,
-				AB58E92D27EA5B5700CC3FCB /* View+Placeholder.swift */,
+				AB599F7827EA8F6F00DB4C8E /* ImageLoader.swift */,
 				AB58E92F27EA5E0900CC3FCB /* ProgressBar.swift */,
 				AB599F7327EA8CC800DB4C8E /* RootView.swift */,
+				AB58E92327EA30C600CC3FCB /* Spinner.swift */,
+				AB58E92D27EA5B5700CC3FCB /* View+Placeholder.swift */,
 			);
 			path = ReusableComponents;
 			sourceTree = "<group>";
@@ -310,9 +313,17 @@
 		AB599F6C27EA886B00DB4C8E /* MovieDetail */ = {
 			isa = PBXGroup;
 			children = (
-				AB599F6D27EA888400DB4C8E /* MovieDetailScreen.swift */,
+				AB599F7727EA8ECA00DB4C8E /* Views */,
 			);
 			path = MovieDetail;
+			sourceTree = "<group>";
+		};
+		AB599F7727EA8ECA00DB4C8E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AB599F6D27EA888400DB4C8E /* MovieDetailScreen.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -471,6 +482,7 @@
 				AB58E93A27EA6B9E00CC3FCB /* APIConstants.swift in Sources */,
 				AB599F7627EA8D1900DB4C8E /* HostingController.swift in Sources */,
 				AB28A5CF27E57CA00019A330 /* APIError.swift in Sources */,
+				AB599F7927EA8F6F00DB4C8E /* ImageLoader.swift in Sources */,
 				AB58E93827EA67DF00CC3FCB /* Helper+Models.swift in Sources */,
 				AB28A5D127E57CC30019A330 /* ErrorResponse.swift in Sources */,
 				AB599F7227EA8C8500DB4C8E /* View+statusBarStyle.swift in Sources */,
