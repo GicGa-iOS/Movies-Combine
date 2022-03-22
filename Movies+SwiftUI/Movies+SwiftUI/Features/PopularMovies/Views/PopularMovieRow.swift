@@ -2,8 +2,10 @@ import SwiftUI
 import NukeUI
 
 struct PopularMovieRow: View {
+
     let movie: Result
     @State var progressValue: Float = 0.0
+    @State private var isActive = false
 
     var body: some View {
         ZStack(alignment: .bottomLeading) {
@@ -14,10 +16,21 @@ struct PopularMovieRow: View {
                 .frame(width: 50.0, height: 50.0)
                 .padding(10.0)
                 .opacity(0.8)
-        }.onAppear(perform: {
+        }
+        .onTapGesture {
+            self.isActive = true
+        }
+        .onAppear(perform: {
             progressValue = Float(movie.voteAverage ?? 0)/10
         })
         .frame(maxWidth: .infinity, alignment: .center)
+        .background(
+            NavigationLink (
+                destination: MovieDetailScreen(movie: movie), isActive: $isActive,
+                label: {
+                    EmptyView()
+                }
+            ))
     }
 
     // This is where the image view is created.

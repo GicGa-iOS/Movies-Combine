@@ -11,7 +11,9 @@ import SwiftUI
 struct Movies_SwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView {
+                TabViewScreen()
+            }
         }
     }
 }

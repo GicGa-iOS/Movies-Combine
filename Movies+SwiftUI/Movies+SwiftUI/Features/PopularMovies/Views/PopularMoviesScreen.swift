@@ -1,13 +1,6 @@
-//
-//  ContentView.swift
-//  Movies+SwiftUI
-//
-//  Created by Giancarlo Castañeda Garcia on 18/03/22.
-//
-
 import SwiftUI
 
-struct ContentView: View {
+struct PopularMoviesScreen: View {
 
     @StateObject private var viewModel = PopularMoviesViewModel()
 
@@ -22,8 +15,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct PopularMoviesScreen_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        PopularMoviesScreen()
     }
 }

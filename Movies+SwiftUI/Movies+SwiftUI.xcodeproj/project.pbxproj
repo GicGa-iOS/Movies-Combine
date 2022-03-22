@@ -31,6 +31,12 @@
 		AB58E93627EA679F00CC3FCB /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58E93527EA679F00CC3FCB /* Helper.swift */; };
 		AB58E93827EA67DF00CC3FCB /* Helper+Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58E93727EA67DF00CC3FCB /* Helper+Models.swift */; };
 		AB58E93A27EA6B9E00CC3FCB /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58E93927EA6B9E00CC3FCB /* APIConstants.swift */; };
+		AB58E93D27EA70BB00CC3FCB /* TabViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58E93C27EA70BB00CC3FCB /* TabViewScreen.swift */; };
+		AB599F6E27EA888400DB4C8E /* MovieDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB599F6D27EA888400DB4C8E /* MovieDetailScreen.swift */; };
+		AB599F7027EA8C3800DB4C8E /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB599F6F27EA8C3800DB4C8E /* UIApplication+Extension.swift */; };
+		AB599F7227EA8C8500DB4C8E /* View+statusBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB599F7127EA8C8500DB4C8E /* View+statusBarStyle.swift */; };
+		AB599F7427EA8CC800DB4C8E /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB599F7327EA8CC800DB4C8E /* RootView.swift */; };
+		AB599F7627EA8D1900DB4C8E /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB599F7527EA8D1900DB4C8E /* HostingController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +83,12 @@
 		AB58E93527EA679F00CC3FCB /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		AB58E93727EA67DF00CC3FCB /* Helper+Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helper+Models.swift"; sourceTree = "<group>"; };
 		AB58E93927EA6B9E00CC3FCB /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		AB58E93C27EA70BB00CC3FCB /* TabViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewScreen.swift; sourceTree = "<group>"; };
+		AB599F6D27EA888400DB4C8E /* MovieDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailScreen.swift; sourceTree = "<group>"; };
+		AB599F6F27EA8C3800DB4C8E /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		AB599F7127EA8C8500DB4C8E /* View+statusBarStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+statusBarStyle.swift"; sourceTree = "<group>"; };
+		AB599F7327EA8CC800DB4C8E /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		AB599F7527EA8D1900DB4C8E /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +120,8 @@
 		AB228D4B27E62F5300B21652 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				AB599F6C27EA886B00DB4C8E /* MovieDetail */,
+				AB58E93B27EA70A200CC3FCB /* TabView */,
 				AB228D4C27E62F5E00B21652 /* PopularMovies */,
 			);
 			path = Features;
@@ -156,12 +170,12 @@
 			isa = PBXGroup;
 			children = (
 				AB28A55627E4EB140019A330 /* Movies_SwiftUIApp.swift */,
-				AB58E93327EA676800CC3FCB /* Utils */,
 				AB28A55A27E4EB160019A330 /* Assets.xcassets */,
-				AB228D4B27E62F5300B21652 /* Features */,
-				AB28A58527E4F5E50019A330 /* ReusableComponents */,
 				AB28A58027E4EB840019A330 /* Base */,
+				AB228D4B27E62F5300B21652 /* Features */,
 				AB28A55C27E4EB160019A330 /* Preview Content */,
+				AB28A58527E4F5E50019A330 /* ReusableComponents */,
+				AB58E93327EA676800CC3FCB /* Utils */,
 			);
 			path = "Movies+SwiftUI";
 			sourceTree = "<group>";
@@ -225,6 +239,7 @@
 				AB58E92327EA30C600CC3FCB /* Spinner.swift */,
 				AB58E92D27EA5B5700CC3FCB /* View+Placeholder.swift */,
 				AB58E92F27EA5E0900CC3FCB /* ProgressBar.swift */,
+				AB599F7327EA8CC800DB4C8E /* RootView.swift */,
 			);
 			path = ReusableComponents;
 			sourceTree = "<group>";
@@ -268,6 +283,9 @@
 			isa = PBXGroup;
 			children = (
 				AB58E93427EA679400CC3FCB /* Helper */,
+				AB599F6F27EA8C3800DB4C8E /* UIApplication+Extension.swift */,
+				AB599F7127EA8C8500DB4C8E /* View+statusBarStyle.swift */,
+				AB599F7527EA8D1900DB4C8E /* HostingController.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -279,6 +297,22 @@
 				AB58E93727EA67DF00CC3FCB /* Helper+Models.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		AB58E93B27EA70A200CC3FCB /* TabView */ = {
+			isa = PBXGroup;
+			children = (
+				AB58E93C27EA70BB00CC3FCB /* TabViewScreen.swift */,
+			);
+			path = TabView;
+			sourceTree = "<group>";
+		};
+		AB599F6C27EA886B00DB4C8E /* MovieDetail */ = {
+			isa = PBXGroup;
+			children = (
+				AB599F6D27EA888400DB4C8E /* MovieDetailScreen.swift */,
+			);
+			path = MovieDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -418,6 +452,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB58E92427EA30C600CC3FCB /* Spinner.swift in Sources */,
+				AB599F7427EA8CC800DB4C8E /* RootView.swift in Sources */,
 				AB58E92E27EA5B5700CC3FCB /* View+Placeholder.swift in Sources */,
 				AB28A5D627E585D10019A330 /* Publisher+Dump.swift in Sources */,
 				AB28A5CD27E54D9E0019A330 /* PopularMovieModel.swift in Sources */,
@@ -430,11 +465,16 @@
 				AB28A58327E4EBEB0019A330 /* Keys.swift in Sources */,
 				AB58E93227EA673C00CC3FCB /* PopularMoviesList.swift in Sources */,
 				AB28A5C727E5443A0019A330 /* FetchPopularService.swift in Sources */,
+				AB599F7027EA8C3800DB4C8E /* UIApplication+Extension.swift in Sources */,
+				AB599F6E27EA888400DB4C8E /* MovieDetailScreen.swift in Sources */,
 				AB28A55727E4EB140019A330 /* Movies_SwiftUIApp.swift in Sources */,
 				AB58E93A27EA6B9E00CC3FCB /* APIConstants.swift in Sources */,
+				AB599F7627EA8D1900DB4C8E /* HostingController.swift in Sources */,
 				AB28A5CF27E57CA00019A330 /* APIError.swift in Sources */,
 				AB58E93827EA67DF00CC3FCB /* Helper+Models.swift in Sources */,
 				AB28A5D127E57CC30019A330 /* ErrorResponse.swift in Sources */,
+				AB599F7227EA8C8500DB4C8E /* View+statusBarStyle.swift in Sources */,
+				AB58E93D27EA70BB00CC3FCB /* TabViewScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
