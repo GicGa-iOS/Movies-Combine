@@ -22,6 +22,7 @@
 		AB28A5D127E57CC30019A330 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB28A5D027E57CC30019A330 /* ErrorResponse.swift */; };
 		AB28A5D427E5858D0019A330 /* Publisher+Retry.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB28A5D327E5858D0019A330 /* Publisher+Retry.swift */; };
 		AB28A5D627E585D10019A330 /* Publisher+Dump.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB28A5D527E585D10019A330 /* Publisher+Dump.swift */; };
+		AB58E92427EA30C600CC3FCB /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58E92327EA30C600CC3FCB /* Spinner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		AB28A5D027E57CC30019A330 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		AB28A5D327E5858D0019A330 /* Publisher+Retry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+Retry.swift"; sourceTree = "<group>"; };
 		AB28A5D527E585D10019A330 /* Publisher+Dump.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+Dump.swift"; sourceTree = "<group>"; };
+		AB58E92327EA30C600CC3FCB /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		AB228D4C27E62F5E00B21652 /* PopularMovies */ = {
 			isa = PBXGroup;
 			children = (
+				AB228D4E27E62F8A00B21652 /* Services */,
 				AB28A5CB27E54D900019A330 /* Models */,
 				AB28A58427E4F5CF0019A330 /* Views */,
 				AB28A5C827E54CCA0019A330 /* ViewModels */,
@@ -200,6 +203,7 @@
 		AB28A58527E4F5E50019A330 /* ReusableComponents */ = {
 			isa = PBXGroup;
 			children = (
+				AB58E92327EA30C600CC3FCB /* Spinner.swift */,
 			);
 			path = ReusableComponents;
 			sourceTree = "<group>";
@@ -207,7 +211,6 @@
 		AB28A5C527E543E80019A330 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				AB228D4E27E62F8A00B21652 /* Services */,
 				AB28A5CE27E57CA00019A330 /* APIError.swift */,
 				AB28A5D027E57CC30019A330 /* ErrorResponse.swift */,
 			);
@@ -369,6 +372,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB58E92427EA30C600CC3FCB /* Spinner.swift in Sources */,
 				AB28A5D627E585D10019A330 /* Publisher+Dump.swift in Sources */,
 				AB28A5CD27E54D9E0019A330 /* PopularMovieModel.swift in Sources */,
 				AB28A5CA27E54CE20019A330 /* PopularMoviesViewModel.swift in Sources */,
