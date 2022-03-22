@@ -16,18 +16,18 @@ struct PopularMovie: Codable {
 
 // MARK: - Result
 
-struct Result: Codable {
-    let adult: Bool
-    let backdropPath: String
-    let genreIDS: [Int]
-    let id: Int
-    let originalLanguage: OriginalLanguage
-    let originalTitle, overview: String
-    let popularity: Double
-    let posterPath, releaseDate, title: String
-    let video: Bool
-    let voteAverage: Double
-    let voteCount: Int
+struct Result: Codable, Identifiable, Equatable {
+    let adult: Bool?
+    let backdropPath: String?
+    let genreIDS: [Int]?
+    let id: Int?
+    let originalLanguage: String?
+    let originalTitle, overview: String?
+    let popularity: Double?
+    let posterPath, releaseDate, title: String?
+    let video: Bool?
+    let voteAverage: Double?
+    let voteCount: Int?
 
     enum CodingKeys: String, CodingKey {
         case adult
@@ -44,10 +44,3 @@ struct Result: Codable {
         case voteCount = "vote_count"
     }
 }
-
-enum OriginalLanguage: String, Codable {
-    case en = "en"
-    case fr = "fr"
-    case ja = "ja"
-}
-
