@@ -23,6 +23,14 @@
 		AB28A5D427E5858D0019A330 /* Publisher+Retry.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB28A5D327E5858D0019A330 /* Publisher+Retry.swift */; };
 		AB28A5D627E585D10019A330 /* Publisher+Dump.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB28A5D527E585D10019A330 /* Publisher+Dump.swift */; };
 		AB58E92427EA30C600CC3FCB /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58E92327EA30C600CC3FCB /* Spinner.swift */; };
+		AB58E92627EA467100CC3FCB /* PopularMovieRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58E92527EA467100CC3FCB /* PopularMovieRow.swift */; };
+		AB58E92C27EA4B6B00CC3FCB /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = AB58E92B27EA4B6B00CC3FCB /* NukeUI */; };
+		AB58E92E27EA5B5700CC3FCB /* View+Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58E92D27EA5B5700CC3FCB /* View+Placeholder.swift */; };
+		AB58E93027EA5E0900CC3FCB /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58E92F27EA5E0900CC3FCB /* ProgressBar.swift */; };
+		AB58E93227EA673C00CC3FCB /* PopularMoviesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58E93127EA673C00CC3FCB /* PopularMoviesList.swift */; };
+		AB58E93627EA679F00CC3FCB /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58E93527EA679F00CC3FCB /* Helper.swift */; };
+		AB58E93827EA67DF00CC3FCB /* Helper+Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58E93727EA67DF00CC3FCB /* Helper+Models.swift */; };
+		AB58E93A27EA6B9E00CC3FCB /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58E93927EA6B9E00CC3FCB /* APIConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +70,13 @@
 		AB28A5D327E5858D0019A330 /* Publisher+Retry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+Retry.swift"; sourceTree = "<group>"; };
 		AB28A5D527E585D10019A330 /* Publisher+Dump.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+Dump.swift"; sourceTree = "<group>"; };
 		AB58E92327EA30C600CC3FCB /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
+		AB58E92527EA467100CC3FCB /* PopularMovieRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovieRow.swift; sourceTree = "<group>"; };
+		AB58E92D27EA5B5700CC3FCB /* View+Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Placeholder.swift"; sourceTree = "<group>"; };
+		AB58E92F27EA5E0900CC3FCB /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		AB58E93127EA673C00CC3FCB /* PopularMoviesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviesList.swift; sourceTree = "<group>"; };
+		AB58E93527EA679F00CC3FCB /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		AB58E93727EA67DF00CC3FCB /* Helper+Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helper+Models.swift"; sourceTree = "<group>"; };
+		AB58E93927EA6B9E00CC3FCB /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB58E92C27EA4B6B00CC3FCB /* NukeUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				AB28A55627E4EB140019A330 /* Movies_SwiftUIApp.swift */,
+				AB58E93327EA676800CC3FCB /* Utils */,
 				AB28A55A27E4EB160019A330 /* Assets.xcassets */,
 				AB228D4B27E62F5300B21652 /* Features */,
 				AB28A58527E4F5E50019A330 /* ReusableComponents */,
@@ -196,6 +213,8 @@
 			isa = PBXGroup;
 			children = (
 				AB28A55827E4EB140019A330 /* PopularMoviesScreen.swift */,
+				AB58E93127EA673C00CC3FCB /* PopularMoviesList.swift */,
+				AB58E92527EA467100CC3FCB /* PopularMovieRow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -204,6 +223,8 @@
 			isa = PBXGroup;
 			children = (
 				AB58E92327EA30C600CC3FCB /* Spinner.swift */,
+				AB58E92D27EA5B5700CC3FCB /* View+Placeholder.swift */,
+				AB58E92F27EA5E0900CC3FCB /* ProgressBar.swift */,
 			);
 			path = ReusableComponents;
 			sourceTree = "<group>";
@@ -213,6 +234,7 @@
 			children = (
 				AB28A5CE27E57CA00019A330 /* APIError.swift */,
 				AB28A5D027E57CC30019A330 /* ErrorResponse.swift */,
+				AB58E93927EA6B9E00CC3FCB /* APIConstants.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -242,6 +264,23 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		AB58E93327EA676800CC3FCB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				AB58E93427EA679400CC3FCB /* Helper */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		AB58E93427EA679400CC3FCB /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				AB58E93527EA679F00CC3FCB /* Helper.swift */,
+				AB58E93727EA67DF00CC3FCB /* Helper+Models.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -258,6 +297,9 @@
 			dependencies = (
 			);
 			name = "Movies+SwiftUI";
+			packageProductDependencies = (
+				AB58E92B27EA4B6B00CC3FCB /* NukeUI */,
+			);
 			productName = "Movies+SwiftUI";
 			productReference = AB28A55327E4EB140019A330 /* Movies+SwiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -330,6 +372,9 @@
 				Base,
 			);
 			mainGroup = AB28A54A27E4EB140019A330;
+			packageReferences = (
+				AB58E92A27EA4B6B00CC3FCB /* XCRemoteSwiftPackageReference "NukeUI" */,
+			);
 			productRefGroup = AB28A55427E4EB140019A330 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -373,15 +418,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB58E92427EA30C600CC3FCB /* Spinner.swift in Sources */,
+				AB58E92E27EA5B5700CC3FCB /* View+Placeholder.swift in Sources */,
 				AB28A5D627E585D10019A330 /* Publisher+Dump.swift in Sources */,
 				AB28A5CD27E54D9E0019A330 /* PopularMovieModel.swift in Sources */,
+				AB58E92627EA467100CC3FCB /* PopularMovieRow.swift in Sources */,
 				AB28A5CA27E54CE20019A330 /* PopularMoviesViewModel.swift in Sources */,
+				AB58E93027EA5E0900CC3FCB /* ProgressBar.swift in Sources */,
+				AB58E93627EA679F00CC3FCB /* Helper.swift in Sources */,
 				AB28A5D427E5858D0019A330 /* Publisher+Retry.swift in Sources */,
 				AB28A55927E4EB140019A330 /* PopularMoviesScreen.swift in Sources */,
 				AB28A58327E4EBEB0019A330 /* Keys.swift in Sources */,
+				AB58E93227EA673C00CC3FCB /* PopularMoviesList.swift in Sources */,
 				AB28A5C727E5443A0019A330 /* FetchPopularService.swift in Sources */,
 				AB28A55727E4EB140019A330 /* Movies_SwiftUIApp.swift in Sources */,
+				AB58E93A27EA6B9E00CC3FCB /* APIConstants.swift in Sources */,
 				AB28A5CF27E57CA00019A330 /* APIError.swift in Sources */,
+				AB58E93827EA67DF00CC3FCB /* Helper+Models.swift in Sources */,
 				AB28A5D127E57CC30019A330 /* ErrorResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -541,6 +593,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Movies+SwiftUI/Preview Content\"";
+				DEVELOPMENT_TEAM = U5AZ9SRKAZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -569,6 +622,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Movies+SwiftUI/Preview Content\"";
+				DEVELOPMENT_TEAM = U5AZ9SRKAZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -701,6 +755,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AB58E92A27EA4B6B00CC3FCB /* XCRemoteSwiftPackageReference "NukeUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/NukeUI";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AB58E92B27EA4B6B00CC3FCB /* NukeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AB58E92A27EA4B6B00CC3FCB /* XCRemoteSwiftPackageReference "NukeUI" */;
+			productName = NukeUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AB28A54B27E4EB140019A330 /* Project object */;
 }
