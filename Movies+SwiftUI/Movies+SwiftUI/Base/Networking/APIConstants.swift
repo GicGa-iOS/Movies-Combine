@@ -1,7 +1,19 @@
 import Foundation
 
 enum APIConstants {
-    static let imgBaseURL = "https://image.tmdb.org/t/p/w400"
+
+    enum backdropBaseURL {
+        static private let backdropSize = "w780"
+        static private let smallBackdropSize = "w300"
+        static let smallSize = imageBase+smallBackdropSize
+        static let normalSize = imageBase+backdropSize
+    }
+
+    static private let posterSize = "w500"
+    static let posterBaseURL = imageBase+posterSize
+    static private let imageBase = "https://image.tmdb.org/t/p/"
     static let baseURL = "https://api.themoviedb.org/3"
     static let language = "en-US"
+    static let youtubeEmbed = "https://www.youtube.com/embed/"
+    static let vimeoEmbed = "https://player.vimeo.com/video/"
 }

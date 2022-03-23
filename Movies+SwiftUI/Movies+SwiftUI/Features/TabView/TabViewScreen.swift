@@ -41,14 +41,24 @@ struct TabViewScreen: View {
             }
 
             .onAppear {
-                let appearance = UITabBarAppearance()
-                appearance.backgroundEffect = UIBlurEffect(style: .systemUltraThinMaterialDark)
-                appearance.backgroundColor = UIColor(Color.orange.opacity(0.2))
+                let blur = UIBlurEffect(style: .systemUltraThinMaterialDark)
+                let color = UIColor(Color.orange.opacity(0.2))
+
+                let tabBarAppearance = UITabBarAppearance()
+                tabBarAppearance.backgroundEffect = blur
+                tabBarAppearance.backgroundColor = color
+
+                let navAppearance = UINavigationBarAppearance()
+                navAppearance.backgroundEffect = blur
+                navAppearance.backgroundColor = color
 
                 // Use this appearance when scrolling behind the TabView:
-                UITabBar.appearance().standardAppearance = appearance
+                UITabBar.appearance().standardAppearance = tabBarAppearance
+                UINavigationBar.appearance().standardAppearance = navAppearance
+
                 // Use this appearance when scrolled all the way up:
-                UITabBar.appearance().scrollEdgeAppearance = appearance
+                UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+                UINavigationBar.appearance().scrollEdgeAppearance = navAppearance
             }
 
         }

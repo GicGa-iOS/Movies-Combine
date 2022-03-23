@@ -8,7 +8,7 @@ struct PopularMovieRow: View {
 
     var body: some View {
         ZStack(alignment: .bottomLeading) {
-            if let url = URL(string: APIConstants.imgBaseURL+(movie.posterPath ?? "")) {
+            if let url = URL(string: APIConstants.posterBaseURL+(movie.posterPath ?? "")) {
                 ImageLoader.makeImage(url: url)
             }
             ProgressBar(progress: $progressValue)
