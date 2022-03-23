@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MovieDetailScreen: View {
 
-    let movie: Result
+    let movie: PopularMovieResult
 
     var body: some View {
         Text(movie.title ?? "")

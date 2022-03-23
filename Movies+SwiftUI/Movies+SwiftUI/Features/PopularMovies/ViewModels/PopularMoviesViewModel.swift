@@ -31,7 +31,7 @@ class PopularMoviesViewModel: ObservableObject {
     }
 
     struct State {
-        var repos: [Result] = []
+        var repos: [PopularMovieResult] = []
         var page: Int = 1
         var canLoadNextPage = true
     }
