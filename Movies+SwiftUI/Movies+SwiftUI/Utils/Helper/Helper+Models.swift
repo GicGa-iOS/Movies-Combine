@@ -15,8 +15,8 @@ extension Helper {
                            title: String = "foo.title",
                            video: Bool = true,
                            voteAverage: Double = 0.5,
-                           voteCount: Int = 100) -> Result {
-        Result(adult: adult,
+                           voteCount: Int = 100) -> PopularMovieResult {
+        PopularMovieResult(adult: adult,
                backdropPath: backdropPath,
                genreIDS: genreIDS,
                id: id,
