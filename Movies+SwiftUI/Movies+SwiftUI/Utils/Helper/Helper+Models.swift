@@ -5,7 +5,7 @@ extension Helper {
     static func makeResult(adult: Bool = false,
                            backdropPath: String = "foo.backdropPath",
                            genreIDS: [Int] = [0,1],
-                           id: Int = 0,
+                           id: Int = 568124,
                            originalLanguage: String = "en",
                            originalTitle: String = "foo.name",
                            overview: String = "foo.overview",
@@ -30,5 +30,35 @@ extension Helper {
                video: video,
                voteAverage: voteAverage,
                voteCount: voteCount)
+    }
+
+    static func makeMovieDetail() -> MovieDetail {
+        MovieDetail(adult: nil,
+                    backdropPath: nil,
+                    belongsToCollection: nil,
+                    budget: nil,
+                    genres: nil,
+                    homepage: nil,
+                    id: nil,
+                    imdbID: nil,
+                    originalLanguage: nil,
+                    originalTitle: nil,
+                    overview: nil,
+                    popularity: nil,
+                    posterPath: nil,
+                    productionCompanies: nil,
+                    productionCountries: nil,
+                    releaseDate: nil,
+                    revenue: nil,
+                    runtime: nil,
+                    spokenLanguages: nil,
+                    status: nil,
+                    tagline: nil,
+                    title: nil,
+                    video: nil,
+                    voteAverage: nil,
+                    voteCount: nil,
+                    videos: nil,
+                    images: nil)
     }
 }
