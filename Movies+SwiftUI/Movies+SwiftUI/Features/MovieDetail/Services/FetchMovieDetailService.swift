@@ -1,61 +1,27 @@
 import Combine
 import Foundation
 
-struct FetchMovieDetailService {
+protocol MovieDetailInterface {
+    var networkRequest: Requestable { get }
 
-    static func fetchDetail(id: Int) -> AnyPublisher<MovieDetail, Error> {
-        guard
-            let url = URL(string: "\(APIConstants.baseURL)/movie/\(id)?api_key=\(Keys.Apiv3)&language=en-US&append_to_response=videos,images&include_image_language=en,null")
-        else {
-            return Fail(error: APIError.invalidRequestError("Invalid URL"))
-                .eraseToAnyPublisher()
-        }
+    func fetchDetail(id: Int) -> AnyPublisher<MovieDetail, Error>
+}
 
-        let dataTaskPublisher = URLSession.shared.dataTaskPublisher(for: url)
-            .mapError { error -> Error in
-                return APIError.transportError(error)
-            }
+class MovieDetailService: MovieDetailInterface {
 
-            .tryMap { (data, response) -> (data: Data, response: URLResponse) in
-                print("Received response from server, now checking status code")
+    // MARK: - Internal Properties
 
-                guard
-                    let urlResponse = response as? HTTPURLResponse
-                else {
-                    throw APIError.invalidResponse
-                }
+    internal var networkRequest: Requestable
 
-                if (200..<300) ~= urlResponse.statusCode {
-                }
-                else {
-                    let decoder = JSONDecoder()
-                    let apiError = try decoder.decode(ErrorResponse.self, from: data)
+    // MARK: - Initialization
 
-                    if urlResponse.statusCode == 400 {
-                        throw APIError.validationError(apiError.statusMessage)
-                    }
+    init(networkRequest: Requestable) {
+        self.networkRequest = networkRequest
+    }
 
-                    if (500..<600) ~= urlResponse.statusCode {
-                        let retryAfter = urlResponse.value(forHTTPHeaderField: "Retry-After")
-                        throw APIError.serverError(statusCode: urlResponse.statusCode,
-                                                   reason: apiError.statusMessage,
-                                                   retryAfter: retryAfter)
-                    }
-                }
-                return (data, response)
-            }
-
-        return dataTaskPublisher
-            .map(\.data)
-            .tryMap { data -> MovieDetail in
-                do {
-                    return try JSONDecoder().decode(MovieDetail.self, from: data)
-                }
-                catch {
-                    throw APIError.decodingError(error)
-                }
-            }
-            .receive(on: DispatchQueue.main)
-            .eraseToAnyPublisher()
+    func fetchDetail(id: Int) -> AnyPublisher<MovieDetail, Error> {
+        let endpoint = MovieDetailEndpoints.fetchDetail(id: id)
+        let request = endpoint.createRequest()
+        return self.networkRequest.request(request)
     }
 }

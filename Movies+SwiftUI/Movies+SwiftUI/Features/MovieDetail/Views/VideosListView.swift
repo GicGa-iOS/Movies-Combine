@@ -44,6 +44,6 @@ struct VideosListView: View {
 struct ActorsListView_Previews: PreviewProvider {
     static var previews: some View {
         VideosListView()
-            .environmentObject(MovieDetailViewModel())
+            .environmentObject(MovieDetailViewModel(service: MovieDetailService(networkRequest: NativeRequestable())))
     }
 }

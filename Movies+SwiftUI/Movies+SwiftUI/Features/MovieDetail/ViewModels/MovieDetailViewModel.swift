@@ -5,6 +5,10 @@ class MovieDetailViewModel: ObservableObject {
 
     typealias DetailAlias = Result<MovieDetail, Error>
 
+    // MARK: - Private Properties
+
+    private let service: MovieDetailService
+
     // MARK: Input
 
     @Published var movieId: Int = 0
@@ -24,7 +28,7 @@ class MovieDetailViewModel: ObservableObject {
     private lazy var fetchDetailPublisher: AnyPublisher<DetailAlias, Never> = {
         $movieId
             .flatMap { detailId -> AnyPublisher<DetailAlias, Never> in
-                FetchMovieDetailService.fetchDetail(id: detailId)
+                self.service.fetchDetail(id: detailId)
                     .asResult()
             }
             .receive(on: DispatchQueue.main)
@@ -32,7 +36,10 @@ class MovieDetailViewModel: ObservableObject {
             .eraseToAnyPublisher()
     }()
 
-    init() {
+    // MARK: - Initialization
+
+    init(service: MovieDetailService) {
+        self.service = service
 
         fetchDetailPublisher
             .map { result in

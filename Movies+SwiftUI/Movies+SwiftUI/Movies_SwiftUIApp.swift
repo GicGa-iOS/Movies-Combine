@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct Movies_SwiftUIApp: App {
-    @StateObject var detailViewModel = MovieDetailViewModel()
+    @StateObject var detailViewModel = MovieDetailViewModel(service: MovieDetailService(networkRequest: NativeRequestable()))
     var body: some Scene {
         WindowGroup {
             RootView {
