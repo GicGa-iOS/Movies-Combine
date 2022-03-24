@@ -34,6 +34,6 @@ struct Gallery: View {
 struct Gallery_Previews: PreviewProvider {
     static var previews: some View {
         Gallery()
-            .environmentObject(MovieDetailViewModel())
+            .environmentObject(MovieDetailViewModel(service: MovieDetailService(networkRequest: NativeRequestable())))
     }
 }

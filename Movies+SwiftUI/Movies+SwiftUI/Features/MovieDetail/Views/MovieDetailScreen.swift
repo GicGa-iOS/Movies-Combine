@@ -46,6 +46,6 @@ struct MovieDetailScreen: View {
 struct MovieDetailScreen_Previews: PreviewProvider {
     static var previews: some View {
         MovieDetailScreen(movie: Helper.makeResult())
-            .environmentObject(MovieDetailViewModel())
+            .environmentObject(MovieDetailViewModel(service: MovieDetailService(networkRequest: NativeRequestable())))
     }
 }

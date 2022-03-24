@@ -14,7 +14,7 @@ struct PopularMovie: Codable {
     }
 }
 
-// MARK: - Result
+// MARK: - PopularMovieResult
 
 struct PopularMovieResult: Codable, Identifiable, Equatable {
     let adult: Bool?

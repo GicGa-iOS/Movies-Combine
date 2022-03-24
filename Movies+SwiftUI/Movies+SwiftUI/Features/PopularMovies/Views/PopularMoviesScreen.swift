@@ -2,7 +2,8 @@ import SwiftUI
 
 struct PopularMoviesScreen: View {
 
-    @StateObject private var viewModel = PopularMoviesViewModel()
+    @StateObject
+    private var viewModel = PopularMoviesViewModel(service: PopularMoviesService(networkRequest: NativeRequestable()))
 
     var body: some View {
         PopularMoviesList(

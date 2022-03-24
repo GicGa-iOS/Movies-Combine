@@ -1,67 +1,27 @@
 import Combine
 import Foundation
 
-struct FetchPopularService {
+protocol PopularMoviesInterface {
+    var networkRequest: Requestable { get }
 
-    static func fetchPopularMovies(page: String) -> AnyPublisher<PopularMovie, Error> {
-        guard let url = URL(string: APIConstants.baseURL+"/movie/popular?api_key=\(Keys.Apiv3)&language=\(APIConstants.language)&page=\(page)") else {
-            return Fail(error: APIError.invalidRequestError("Invalid URL"))
-                .eraseToAnyPublisher()
-        }
+    func fetchPopularMovies(page: String) -> AnyPublisher<PopularMovie, Error>
+}
 
-        let dataTaskPublisher = URLSession.shared.dataTaskPublisher(for: url)
-        // Handle URL errors (most likely not able to connect to the server)
-            .mapError{ error -> Error in
-                return APIError.transportError(error)
-            }
+class PopularMoviesService: PopularMoviesInterface {
 
-        // Handle all other errors
-            .tryMap{ (data, response) -> (data: Data, response: URLResponse) in
-                print("Received response from server, now checking status code")
+    // MARK: - Internal Properties
 
-                guard let urlResponse = response as? HTTPURLResponse else {
-                    throw APIError.invalidResponse
-                }
-                if (200..<300) ~= urlResponse.statusCode {
-                }
-                else {
-                    let decoder = JSONDecoder()
-                    let apiError = try decoder.decode(ErrorResponse.self, from: data)
+    internal var networkRequest: Requestable
 
-                    if urlResponse.statusCode == 400 {
-                        throw APIError.validationError(apiError.statusMessage)
-                    }
+    // MARK: - Initialization
 
-                    if (500..<600) ~= urlResponse.statusCode {
-                        let retryAfter = urlResponse.value(forHTTPHeaderField: "Retry-After")
-                        throw APIError.serverError(statusCode: urlResponse.statusCode,
-                                                   reason: apiError.statusMessage,
-                                                   retryAfter: retryAfter)
-                    }
-                }
-                return (data, response)
-            }
+    init(networkRequest: Requestable) {
+        self.networkRequest = networkRequest
+    }
 
-        return dataTaskPublisher
-            .retry(2, withBackoff: 3) { error in
-                if case APIError.serverError(_, _, _) = error {
-                    return true
-                }
-                else {
-                    return false
-                }
-            }
-            .map(\.data)
-            .tryMap { data -> PopularMovie in
-                let decoder = JSONDecoder()
-                do {
-                    return try decoder.decode(PopularMovie.self, from: data)
-                }
-                catch {
-                    throw APIError.decodingError(error)
-                }
-            }
-            .receive(on: DispatchQueue.main)
-            .eraseToAnyPublisher()
+    func fetchPopularMovies(page: String) -> AnyPublisher<PopularMovie, Error> {
+        let endpoint = PopularServiceEndpoints.fetchPopular(page: page)
+        let request = endpoint.createRequest()
+        return self.networkRequest.request(request)
     }
 }

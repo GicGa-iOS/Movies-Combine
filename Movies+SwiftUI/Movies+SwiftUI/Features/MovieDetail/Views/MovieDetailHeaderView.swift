@@ -39,6 +39,6 @@ struct MovieDetailHeaderView: View {
 struct MovieDetailHeaderView_Previews: PreviewProvider {
     static var previews: some View {
         MovieDetailHeaderView()
-            .environmentObject(MovieDetailViewModel())
+            .environmentObject(MovieDetailViewModel(service: MovieDetailService(networkRequest: NativeRequestable())))
     }
 }
