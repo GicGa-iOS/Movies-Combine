@@ -35,6 +35,9 @@ struct TabViewScreen: View {
                         Text("Search")
                     }
                     .tag(2)
+                    .statusBarStyle(.lightContent)
+                    .navigationBarHidden(true)
+                    .navigationBarTitle("")
 
                 Text("Top Rated")
                     .tabItem {
@@ -58,6 +61,9 @@ struct TabViewScreen: View {
                 let navAppearance = UINavigationBarAppearance()
                 navAppearance.backgroundEffect = blur
                 navAppearance.backgroundColor = color
+                navAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+
+                UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).backgroundColor = .lightGray
 
                 // Use this appearance when scrolling behind the TabView:
                 UITabBar.appearance().standardAppearance = tabBarAppearance
