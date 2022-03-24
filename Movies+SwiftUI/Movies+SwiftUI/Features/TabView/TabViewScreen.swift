@@ -29,12 +29,19 @@ struct TabViewScreen: View {
                     .navigationBarHidden(true)
                     .navigationBarTitle("")
 
+                SearcherScreen()
+                    .tabItem {
+                        Image(systemName: "magnifyingglass")
+                        Text("Search")
+                    }
+                    .tag(2)
+
                 Text("Top Rated")
                     .tabItem {
                         Image(systemName: "flame")
                         Text("Top Rated")
                     }
-                    .tag(2)
+                    .tag(3)
                     .statusBarStyle(.darkContent)
                     .navigationBarHidden(true)
                     .navigationBarTitle("")
