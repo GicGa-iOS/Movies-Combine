@@ -12,7 +12,8 @@ public class NativeRequestable: Requestable {
         sessionConfig.timeoutIntervalForRequest = TimeInterval(req.requestTimeOut ?? requestTimeOut)
 
         guard
-            let url = URL(string: req.url)
+            let encodedURL = req.url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+            let url = URL(string: encodedURL)
         else {
             // Return a fail publisher if the url is invalid
             return Fail(error: APIError.invalidRequestError("Invalid URL"))
