@@ -44,7 +44,7 @@ enum MultiSearchEndpoints: Endpoints {
         let baseUrl = APIConstants.baseURL
         switch self {
         case .search(let query, let page):
-            return "\(baseUrl)/search/multi?api_key=\(Keys.Apiv3)&language=\(APIConstants.language)&query=\(query)&page=\(page)&include_adult=true"
+            return "\(baseUrl)/search/multi?api_key=\(Keys.Apiv3)&language=\(APIConstants.language)&query=\(query)&page=\(page)&include_adult=false"
         }
     }
 }
