@@ -61,4 +61,30 @@ extension Helper {
                     videos: nil,
                     images: nil)
     }
+
+    static func makeMultiSearchResultModel() -> MultiSearchResultModel {
+        MultiSearchResultModel(adult: nil,
+                               backdropPath: nil,
+                               genreIDS: nil,
+                               id: nil,
+                               mediaType: nil,
+                               originalLanguage: nil,
+                               originalTitle: nil,
+                               overview: nil,
+                               popularity: nil,
+                               posterPath: nil,
+                               releaseDate: nil,
+                               title: nil,
+                               video: nil,
+                               voteAverage: nil,
+                               voteCount: nil,
+                               firstAirDate: nil,
+                               name: nil,
+                               originCountry: nil,
+                               originalName: nil,
+                               gender: nil,
+                               knownFor: nil,
+                               knownForDepartment: nil,
+                               profilePath: nil)
+    }
 }

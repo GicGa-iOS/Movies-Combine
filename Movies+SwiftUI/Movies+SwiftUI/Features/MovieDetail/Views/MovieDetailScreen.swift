@@ -3,7 +3,7 @@ import SwiftUI
 struct MovieDetailScreen: View {
 
     @EnvironmentObject var viewModel: MovieDetailViewModel
-    let movie: PopularMovieResult
+    let movieId: Int
 
     var body: some View {
 
@@ -34,7 +34,7 @@ struct MovieDetailScreen: View {
             }
             .frame(maxWidth: .infinity)
             .onAppear {
-                viewModel.movieId = movie.id ?? 0
+                viewModel.movieId = movieId
             }
         }
         .background(Color.black)
@@ -45,7 +45,7 @@ struct MovieDetailScreen: View {
 
 struct MovieDetailScreen_Previews: PreviewProvider {
     static var previews: some View {
-        MovieDetailScreen(movie: Helper.makeResult())
+        MovieDetailScreen(movieId: 568124)
             .environmentObject(MovieDetailViewModel(service: MovieDetailService(networkRequest: NativeRequestable())))
     }
 }

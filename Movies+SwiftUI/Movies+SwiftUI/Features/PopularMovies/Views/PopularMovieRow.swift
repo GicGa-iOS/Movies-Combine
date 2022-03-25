@@ -25,7 +25,7 @@ struct PopularMovieRow: View {
         .frame(maxWidth: .infinity, alignment: .center)
         .background(
             NavigationLink (
-                destination: MovieDetailScreen(movie: movie), isActive: $isActive,
+                destination: MovieDetailScreen(movieId: movie.id ?? 0), isActive: $isActive,
                 label: {
                     EmptyView()
                 }
