@@ -71,6 +71,7 @@
 		ABDA843827EBEE2D00FE7AC7 /* NativeRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDA843727EBEE2D00FE7AC7 /* NativeRequestable.swift */; };
 		ABDA843A27EBF9DC00FE7AC7 /* PopularServiceEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDA843927EBF9DB00FE7AC7 /* PopularServiceEndpoints.swift */; };
 		ABDA843C27EBFCB200FE7AC7 /* MovieDetailEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDA843B27EBFCB200FE7AC7 /* MovieDetailEndpoints.swift */; };
+		ABED2C9127EE7DEF00510943 /* SearchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABED2C9027EE7DEF00510943 /* SearchDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +158,7 @@
 		ABDA843727EBEE2D00FE7AC7 /* NativeRequestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeRequestable.swift; sourceTree = "<group>"; };
 		ABDA843927EBF9DB00FE7AC7 /* PopularServiceEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularServiceEndpoints.swift; sourceTree = "<group>"; };
 		ABDA843B27EBFCB200FE7AC7 /* MovieDetailEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailEndpoints.swift; sourceTree = "<group>"; };
+		ABED2C9027EE7DEF00510943 /* SearchDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -457,6 +459,7 @@
 			isa = PBXGroup;
 			children = (
 				AB81527D27ED039400FE744C /* SearcherScreen.swift */,
+				ABED2C9027EE7DEF00510943 /* SearchDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -651,6 +654,7 @@
 				ABDA843A27EBF9DC00FE7AC7 /* PopularServiceEndpoints.swift in Sources */,
 				AB28A5D427E5858D0019A330 /* Publisher+Retry.swift in Sources */,
 				ABDA843C27EBFCB200FE7AC7 /* MovieDetailEndpoints.swift in Sources */,
+				ABED2C9127EE7DEF00510943 /* SearchDetailView.swift in Sources */,
 				AB599F7F27EA9E8D00DB4C8E /* MovieDetailModel.swift in Sources */,
 				AB02A4DB27EBCCE200EC8C31 /* Gallery.swift in Sources */,
 				AB28A55927E4EB140019A330 /* PopularMoviesScreen.swift in Sources */,

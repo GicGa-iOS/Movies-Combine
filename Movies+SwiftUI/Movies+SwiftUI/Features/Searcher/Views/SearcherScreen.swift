@@ -11,8 +11,12 @@ struct SearcherScreen: View {
             ScrollView {
                 LazyVGrid(columns: rows) {
                     ForEach(viewModel.repos, id: \.id) { item in
-                        NavigationLink(destination: Text(item.title ?? "")) {
 
+                        NavigationLink {
+
+                            SearchDetailView(searchItem: item)
+
+                        } label: {
                             if let stng = viewModel.getPath(item: item), let url = URL(string: APIConstants.posterBaseURL+stng) {
                                 ZStack(alignment: .topLeading) {
                                     ImageLoader.makeImage(url: url)
