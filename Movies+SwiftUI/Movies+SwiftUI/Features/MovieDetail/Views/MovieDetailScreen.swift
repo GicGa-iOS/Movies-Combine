@@ -3,6 +3,7 @@ import SwiftUI
 struct MovieDetailScreen: View {
 
     @EnvironmentObject var viewModel: MovieDetailViewModel
+    @EnvironmentObject var genresViewModel: MovieGenresViewModel
     let movieId: Int
 
     var body: some View {
@@ -11,14 +12,16 @@ struct MovieDetailScreen: View {
             VStack(alignment: .leading) {
                 MovieDetailHeaderView()
 
+                GenresView(useSpecificGenres: viewModel.movieGenres, enableGenreTapGesture: false, alignment: .center)
+
                 Text("Overview")
                     .bold()
                     .padding(10)
                     .font(.title3)
                     .foregroundColor(.white)
 
-                Text(viewModel.overview)
-                    .padding(.horizontal, 10)
+                ExpandableText(viewModel.overview, lineLimit: 3)
+                    .padding(EdgeInsets(top: 10, leading: 10, bottom: 20, trailing: 10))
                     .foregroundColor(.white)
                     .font(.body)
 
@@ -47,5 +50,12 @@ struct MovieDetailScreen_Previews: PreviewProvider {
     static var previews: some View {
         MovieDetailScreen(movieId: 568124)
             .environmentObject(MovieDetailViewModel(service: MovieDetailService(networkRequest: NativeRequestable())))
+            .environmentObject(
+                MovieGenresViewModel(
+                    service: MovieGenreService(
+                        networkRequest: NativeRequestable()
+                    )
+                )
+            )
     }
 }

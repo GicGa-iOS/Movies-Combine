@@ -24,6 +24,7 @@ class MovieDetailViewModel: ObservableObject {
     @Published var overview: String = ""
     @Published var videos : [MovieDetailResult] = []
     @Published var images: [MovieBackdrop] = []
+    @Published var movieGenres: [MovieGenre] = []
 
     private lazy var fetchDetailPublisher: AnyPublisher<DetailAlias, Never> = {
         $movieId
@@ -150,5 +151,16 @@ class MovieDetailViewModel: ObservableObject {
                     return URL(string: "")
                 }
             }.assign(to: &$posterURL)
+
+        fetchDetailPublisher
+            .map { result in
+                switch result {
+                case .success(let data):
+                    return data.genres ?? []
+                case .failure(_):
+                    return []
+                }
+            }
+            .assign(to: &$movieGenres)
     }
 }

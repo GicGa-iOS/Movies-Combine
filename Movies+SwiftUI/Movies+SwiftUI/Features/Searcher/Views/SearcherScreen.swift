@@ -13,28 +13,9 @@ struct SearcherScreen: View {
                     ForEach(viewModel.repos, id: \.id) { item in
 
                         NavigationLink {
-
                             SearchDetailView(searchItem: item)
-
                         } label: {
-                            if let stng = viewModel.getPath(item: item), let url = URL(string: APIConstants.posterBaseURL+stng) {
-                                ZStack(alignment: .topLeading) {
-                                    ImageLoader.makeImage(url: url)
-                                        .frame(minWidth: 100, minHeight: 200)
-                                    Text(viewModel.getMediaType(item: item))
-                                        .foregroundColor(.white)
-                                        .background(Color.black)
-                                        .opacity(0.6)
-                                        .padding(5)
-                                        .cornerRadius(5)
-                                }
-                            } else {
-                                VStack {
-                                    Text((item.posterPath ?? viewModel.getTitle(item: item)) ?? "No title available")
-                                    Text(viewModel.getMediaType(item: item))
-                                        .font(.footnote)
-                                }
-                            }
+                            SearchRow(searchItem: item)
                         }
                     }
                     if viewModel.canLoadNextPage {

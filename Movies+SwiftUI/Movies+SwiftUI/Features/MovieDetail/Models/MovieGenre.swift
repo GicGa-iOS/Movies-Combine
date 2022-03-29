@@ -2,7 +2,7 @@ import Foundation
 
 // MARK: - MovieGenre
 
-struct MovieGenre: Codable {
-    let id: Int?
-    let name: String?
+struct MovieGenre: Codable, Hashable {
+    let id: Int
+    let name: String
 }

@@ -9,7 +9,7 @@ struct TabViewScreen: View {
         NavigationView {
             TabView(selection: $selectedTab) {
 
-                Text("Upcoming")
+                GenresView(useSpecificGenres: nil, enableGenreTapGesture: true, alignment: .center)
                     .tabItem {
                         Image(systemName: "star.bubble")
                         Text("Upcoming")
