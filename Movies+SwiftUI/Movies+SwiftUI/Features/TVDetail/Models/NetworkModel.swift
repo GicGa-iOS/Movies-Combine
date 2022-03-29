@@ -1,16 +1,15 @@
 import Foundation
 
-// MARK: - ProductionCompany
+// MARK: - NetworkModel
 
-struct ProductionCompany: Codable {
+struct NetworkModel: Codable {
+    let name: String?
     let id: Int?
-    let logoPath: String?
-    let name, originCountry: String?
+    let logoPath, originCountry: String?
 
     enum CodingKeys: String, CodingKey {
-        case id
+        case name, id
         case logoPath = "logo_path"
-        case name
         case originCountry = "origin_country"
     }
 }

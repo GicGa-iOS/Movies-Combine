@@ -1,8 +1,8 @@
 import Foundation
 
-// MARK: - ProductionCountry
+// MARK: - ProductionCountryModel
 
-struct ProductionCountry: Codable {
+struct ProductionCountryModel: Codable {
     let iso3166_1, name: String?
 
     enum CodingKeys: String, CodingKey {

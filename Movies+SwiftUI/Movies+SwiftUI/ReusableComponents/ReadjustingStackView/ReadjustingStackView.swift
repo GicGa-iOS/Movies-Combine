@@ -27,11 +27,11 @@ struct ReadjustingStackView<Data: RandomAccessCollection, Content: View>: View w
 
 struct ReadjustingStackView_Previews: PreviewProvider {
     static var previews: some View {
-        let data = [MovieGenre(id: 28, name: "Action"),
-                    MovieGenre(id: 12, name: "Adventure"),
-                    MovieGenre(id: 35, name: "Comedy"),
-                    MovieGenre(id: 878, name: "Science Fiction"),
-                    MovieGenre(id: 18, name: "Drama")]
+        let data = [GenreModel(id: 28, name: "Action"),
+                    GenreModel(id: 12, name: "Adventure"),
+                    GenreModel(id: 35, name: "Comedy"),
+                    GenreModel(id: 878, name: "Science Fiction"),
+                    GenreModel(id: 18, name: "Drama")]
         ReadjustingStackView(data: data, spacing: 8, alignment: .leading) { item in
             Text(item.name)
         }

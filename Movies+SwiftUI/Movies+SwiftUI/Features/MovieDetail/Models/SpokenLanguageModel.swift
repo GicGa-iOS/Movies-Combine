@@ -1,8 +1,8 @@
 import Foundation
 
-// MARK: - SpokenLanguage
+// MARK: - SpokenLanguageModel
 
-struct SpokenLanguage: Codable {
+struct SpokenLanguageModel: Codable {
     let englishName: String?
     let iso639_1: String?
     let name: String?

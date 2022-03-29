@@ -1,8 +1,8 @@
 import Foundation
 
-// MARK: - MovieBackdrop
+// MARK: - MovieBackdropModel
 
-struct MovieBackdrop: Codable, Hashable {
+struct MovieBackdropModel: Codable, Hashable {
     let aspectRatio: Double?
     let height: Int?
     let iso639_1: String?

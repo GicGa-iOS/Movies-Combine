@@ -2,9 +2,9 @@ import SwiftUI
 
 struct GenresView: View {
 
-    @EnvironmentObject var viewModel: MovieGenresViewModel
+    @EnvironmentObject var viewModel: GenreModelsViewModel
 
-    let useSpecificGenres: [MovieGenre]?
+    let useSpecificGenres: [GenreModel]?
     @State var enableGenreTapGesture: Bool
     let alignment: HorizontalAlignment
 
@@ -21,12 +21,12 @@ struct GenresView: View {
                 )
         }.onAppear {
             if useSpecificGenres?.isEmpty ?? true {
-                viewModel.getMovieGenres()
+                viewModel.getGenreModels()
             }
         }
     }
 
-    private func getStackContent(enableTap: Bool, item: MovieGenre) -> some View {
+    private func getStackContent(enableTap: Bool, item: GenreModel) -> some View {
         if enableGenreTapGesture {
             return AnyView(Button(action: {}) {
                 HStack {
@@ -44,8 +44,8 @@ struct GenresView_Previews: PreviewProvider {
     static var previews: some View {
         GenresView(useSpecificGenres: nil, enableGenreTapGesture: true, alignment: .leading)
             .environmentObject(
-                MovieGenresViewModel(
-                    service: MovieGenreService(
+                GenreModelsViewModel(
+                    service: GenreModelService(
                         networkRequest: NativeRequestable()
                     )
                 )

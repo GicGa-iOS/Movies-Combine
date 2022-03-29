@@ -1,8 +1,8 @@
 import Foundation
 
-enum GenreModelEndpoints: Endpoints {
+enum TVDetailEndpoints: Endpoints {
 
-    case getGenres
+    case getTVDetail
 
     var requestTimeOut: Int{
         return 30
@@ -10,7 +10,7 @@ enum GenreModelEndpoints: Endpoints {
 
     var httpMethod: HTTPMethod {
         switch self {
-        case .getGenres:
+        case .getTVDetail:
             return .GET
         }
     }
@@ -26,14 +26,13 @@ enum GenreModelEndpoints: Endpoints {
         var headers: Headers = [:]
         headers["Content-Type"] = "application/json"
         return NetworkRequest(url: getURL(), headers: headers, reqBody: requestBody, httpMethod: httpMethod)
-
     }
 
     func getURL() -> String {
         let baseUrl = APIConstants.baseURL
         switch self {
-        case .getGenres:
-            return "\(baseUrl)/genre/movie/list?api_key=\(Keys.Apiv3)&language=\(APIConstants.language)"
+        case .getTVDetail:
+            return "\(baseUrl)"
         }
     }
 }

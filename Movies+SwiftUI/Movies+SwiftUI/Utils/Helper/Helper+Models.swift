@@ -15,8 +15,8 @@ extension Helper {
                            title: String = "foo.title",
                            video: Bool = true,
                            voteAverage: Double = 0.5,
-                           voteCount: Int = 100) -> PopularMovieResult {
-        PopularMovieResult(adult: adult,
+                           voteCount: Int = 100) -> PopularMovieResultModel {
+        PopularMovieResultModel(adult: adult,
                backdropPath: backdropPath,
                genreIDS: genreIDS,
                id: id,
@@ -32,8 +32,8 @@ extension Helper {
                voteCount: voteCount)
     }
 
-    static func makeMovieDetail() -> MovieDetail {
-        MovieDetail(adult: nil,
+    static func makeMovieDetail() -> MovieDetailModel {
+        MovieDetailModel(adult: nil,
                     backdropPath: nil,
                     belongsToCollection: nil,
                     budget: nil,

@@ -1,13 +1,13 @@
 import Combine
 import Foundation
 
-protocol MovieGenreInterface {
+protocol GenreModelInterface {
     var networkRequest: Requestable { get }
 
-    func getGenres() -> AnyPublisher<MoviesGenreList, Error>
+    func getGenres() -> AnyPublisher<MoviesGenreListModel, Error>
 }
 
-class MovieGenreService: MovieGenreInterface {
+class GenreModelService: GenreModelInterface {
 
     // MARK: - Internal Properties
 
@@ -19,8 +19,8 @@ class MovieGenreService: MovieGenreInterface {
         self.networkRequest = networkRequest
     }
 
-    func getGenres() -> AnyPublisher<MoviesGenreList, Error> {
-        let endpoint = MovieGenreEndpoints.getGenres
+    func getGenres() -> AnyPublisher<MoviesGenreListModel, Error> {
+        let endpoint = GenreModelEndpoints.getGenres
         let request = endpoint.createRequest()
         return networkRequest.request(request)
     }

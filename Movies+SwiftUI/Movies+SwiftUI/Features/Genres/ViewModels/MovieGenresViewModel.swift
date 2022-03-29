@@ -1,27 +1,27 @@
 import Combine
 import SwiftUI
 
-class MovieGenresViewModel: ObservableObject {
+class GenreModelsViewModel: ObservableObject {
 
     // MARK: - Outputs
 
-    @Published var repos: [MovieGenre] = []
+    @Published var repos: [GenreModel] = []
     @Published var spacing: CGFloat = 8
 
     // MARK: - Private Porperties
 
     private var subscriptions = Set<AnyCancellable>()
-    private let service: MovieGenreService
+    private let service: GenreModelService
 
     // MARK: - Initialization
 
-    init(service: MovieGenreService) {
+    init(service: GenreModelService) {
         self.service = service
     }
 
     // MARK: - Public Functions
 
-    func getMovieGenres() {
+    func getGenreModels() {
         service.getGenres()
             .sink(receiveCompletion: onReceive,
                   receiveValue: onReceive)
@@ -39,7 +39,7 @@ class MovieGenresViewModel: ObservableObject {
         }
     }
 
-    private func onReceive(_ batch: MoviesGenreList) {
+    private func onReceive(_ batch: MoviesGenreListModel) {
         repos = batch.genres
     }
 }

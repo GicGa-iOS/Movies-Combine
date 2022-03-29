@@ -5,7 +5,7 @@ class PopularMoviesViewModel: ObservableObject {
 
     @Published private(set) var state = State()
     struct State {
-        var repos: [PopularMovieResult] = []
+        var repos: [PopularMovieResultModel] = []
         var page: Int = 1
         var canLoadNextPage = true
     }
@@ -44,7 +44,7 @@ class PopularMoviesViewModel: ObservableObject {
         }
     }
 
-    private func onReceive(_ batch: PopularMovie) {
+    private func onReceive(_ batch: PopularMovieModel) {
         state.repos += batch.results
         state.page += 1
         state.canLoadNextPage = batch.totalPages >= state.page

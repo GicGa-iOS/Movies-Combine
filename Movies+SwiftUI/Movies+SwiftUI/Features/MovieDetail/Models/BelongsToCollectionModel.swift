@@ -1,8 +1,8 @@
 import Foundation
 
-// MARK: - BelongsToCollection
+// MARK: - BelongsToCollectionModel
 
-struct BelongsToCollection: Codable {
+struct BelongsToCollectionModel: Codable {
     let id: Int?
     let name, posterPath, backdropPath: String?
 

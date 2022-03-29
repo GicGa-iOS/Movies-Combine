@@ -11,7 +11,7 @@ import SwiftUI
 struct Movies_SwiftUIApp: App {
     @StateObject var detailViewModel = MovieDetailViewModel(service: MovieDetailService(networkRequest: NativeRequestable()))
     @StateObject var searchViewModel = SearchViewModel(service: MultiSearchService(networkRequest: NativeRequestable()))
-    @StateObject var genresViewModel = MovieGenresViewModel(service: MovieGenreService(networkRequest: NativeRequestable()))
+    @StateObject var genresViewModel = GenreModelsViewModel(service: GenreModelService(networkRequest: NativeRequestable()))
     var body: some Scene {
         WindowGroup {
             RootView {

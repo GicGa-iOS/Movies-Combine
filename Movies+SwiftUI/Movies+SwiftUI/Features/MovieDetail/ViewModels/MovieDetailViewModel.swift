@@ -3,7 +3,7 @@ import Foundation
 
 class MovieDetailViewModel: ObservableObject {
 
-    typealias DetailAlias = Result<MovieDetail, Error>
+    typealias DetailAlias = Result<MovieDetailModel, Error>
 
     // MARK: - Private Properties
 
@@ -22,9 +22,9 @@ class MovieDetailViewModel: ObservableObject {
     @Published var revenue: String = ""
     @Published var voteAverage: String = ""
     @Published var overview: String = ""
-    @Published var videos : [MovieDetailResult] = []
-    @Published var images: [MovieBackdrop] = []
-    @Published var movieGenres: [MovieGenre] = []
+    @Published var videos : [DetailResultModel] = []
+    @Published var images: [MovieBackdropModel] = []
+    @Published var GenreModels: [GenreModel] = []
 
     private lazy var fetchDetailPublisher: AnyPublisher<DetailAlias, Never> = {
         $movieId
@@ -161,6 +161,6 @@ class MovieDetailViewModel: ObservableObject {
                     return []
                 }
             }
-            .assign(to: &$movieGenres)
+            .assign(to: &$GenreModels)
     }
 }

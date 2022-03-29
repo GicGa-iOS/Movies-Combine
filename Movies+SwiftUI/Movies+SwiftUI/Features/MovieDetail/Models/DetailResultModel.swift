@@ -1,8 +1,8 @@
 import Foundation
 
-// MARK: - MovieDetailResult
+// MARK: - DetailResultModel
 
-struct MovieDetailResult: Codable, Identifiable {
+struct DetailResultModel: Codable, Identifiable {
     let iso639_1: String?
     let iso3166_1, name, key, publishedAt: String?
     let site: String?

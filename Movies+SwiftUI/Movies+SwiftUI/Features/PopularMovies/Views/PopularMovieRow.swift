@@ -2,7 +2,7 @@ import SwiftUI
 
 struct PopularMovieRow: View {
 
-    let movie: PopularMovieResult
+    let movie: PopularMovieResultModel
     @State var progressValue: Float = 0.0
     @State private var isActive = false
 

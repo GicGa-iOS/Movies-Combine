@@ -2,7 +2,7 @@ import SwiftUI
 
 struct PopularMoviesList: View {
 
-    let repos: [PopularMovieResult]
+    let repos: [PopularMovieResultModel]
     let isLoading: Bool
     let onScrolledAtBottom: () -> Void
 

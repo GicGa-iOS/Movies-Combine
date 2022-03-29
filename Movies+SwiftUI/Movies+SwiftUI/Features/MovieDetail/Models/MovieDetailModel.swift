@@ -1,12 +1,13 @@
 import Foundation
 
-// MARK: - Movie
-struct MovieDetail: Codable {
+// MARK: - MovieDetailModel
+
+struct MovieDetailModel: Codable {
     let adult: Bool?
     let backdropPath: String?
-    let belongsToCollection: BelongsToCollection?
+    let belongsToCollection: BelongsToCollectionModel?
     let budget: Int?
-    let genres: [MovieGenre]?
+    let genres: [GenreModel]?
     let homepage: String?
     let id: Int?
     let imdbID: String?
@@ -14,17 +15,17 @@ struct MovieDetail: Codable {
     let originalTitle, overview: String?
     let popularity: Double?
     let posterPath: String?
-    let productionCompanies: [ProductionCompany]?
-    let productionCountries: [ProductionCountry]?
+    let productionCompanies: [ProductionCompanyModel]?
+    let productionCountries: [ProductionCountryModel]?
     let releaseDate: String?
     let revenue, runtime: Int?
-    let spokenLanguages: [SpokenLanguage]?
+    let spokenLanguages: [SpokenLanguageModel]?
     let status, tagline, title: String?
     let video: Bool?
     let voteAverage: Double?
     let voteCount: Int?
-    let videos: MovieDetailVideos?
-    let images: MovieDetailImages?
+    let videos: DetailVideosModel?
+    let images: DetailImagesModel?
 
     enum CodingKeys: String, CodingKey {
         case adult
