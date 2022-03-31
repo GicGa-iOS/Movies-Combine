@@ -13,7 +13,8 @@ enum APIConstants {
     static let posterBaseURL = imageBase+posterSize
     static private let imageBase = "https://image.tmdb.org/t/p/"
     static let baseURL = "https://api.themoviedb.org/3"
-    static let language = "en-US"
+    static let language = "es-MX"
+    static let languageShort = "es"
     static let youtubeEmbed = "https://www.youtube.com/embed/"
     static let vimeoEmbed = "https://player.vimeo.com/video/"
 }

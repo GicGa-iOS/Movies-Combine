@@ -2,13 +2,14 @@ import Foundation
 
 // MARK: - LastEpisodeToAirModel
 
-struct LastEpisodeToAirModel: Codable {
+struct EpisodeToAirModel: Codable {
     let airDate: String?
     let episodeNumber, id: Int?
     let name, overview, productionCode: String?
     let seasonNumber: Int?
     let stillPath: String?
-    let voteAverage, voteCount: Int?
+    let voteAverage: Double?
+    let voteCount: Int?
 
     enum CodingKeys: String, CodingKey {
         case airDate = "air_date"

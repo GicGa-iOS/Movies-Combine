@@ -103,7 +103,7 @@ class MovieDetailViewModel: ObservableObject {
                 case .success(let data):
                     return "Revenue: \(data.revenue ?? 0)"
                 case .failure(_):
-                    return "evenue: -"
+                    return "Revenue: -"
                 }
             })
             .assign(to: &$revenue)

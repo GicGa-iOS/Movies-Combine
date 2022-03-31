@@ -26,7 +26,7 @@ struct SearchDetailView: View {
             return AnyView(Text("person"+(item.title ?? "")))
 
         case .tv:
-            return AnyView(Text("tv"+(item.title ?? "")))
+            return AnyView(TVDetailScreen(tvId: itemId))
         }
     }
     

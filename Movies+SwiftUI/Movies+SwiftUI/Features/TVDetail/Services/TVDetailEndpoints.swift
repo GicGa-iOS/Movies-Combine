@@ -2,7 +2,7 @@ import Foundation
 
 enum TVDetailEndpoints: Endpoints {
 
-    case getTVDetail
+    case getTVDetail(id: Int)
 
     var requestTimeOut: Int{
         return 30
@@ -31,8 +31,8 @@ enum TVDetailEndpoints: Endpoints {
     func getURL() -> String {
         let baseUrl = APIConstants.baseURL
         switch self {
-        case .getTVDetail:
-            return "\(baseUrl)"
+        case .getTVDetail(let id):
+            return "\(baseUrl)/tv/\(id)?api_key=\(Keys.Apiv3)&language=\(APIConstants.language)&append_to_response=videos,images"
         }
     }
 }

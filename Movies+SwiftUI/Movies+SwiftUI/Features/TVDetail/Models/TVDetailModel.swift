@@ -14,9 +14,9 @@ struct TVDetailModel: Codable {
     let inProduction: Bool?
     let languages: [String]?
     let lastAirDate: String?
-    let lastEpisodeToAir: LastEpisodeToAirModel?
+    let lastEpisodeToAir: EpisodeToAirModel?
     let name: String?
-    let nextEpisodeToAir: String?
+    let nextEpisodeToAir: EpisodeToAirModel?
     let networks: [NetworkModel]?
     let numberOfEpisodes, numberOfSeasons: Int?
     let originCountry: [String]?

@@ -26,7 +26,7 @@ struct MovieDetailScreen: View {
                     .font(.body)
 
                 if !viewModel.videos.isEmpty {
-                    VideosListView()
+                    VideosListView(videos: viewModel.videos)
                         .padding(.top, 10)
                 }
                 if !viewModel.images.isEmpty {

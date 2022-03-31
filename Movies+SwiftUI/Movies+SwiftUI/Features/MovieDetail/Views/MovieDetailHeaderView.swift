@@ -31,7 +31,7 @@ struct MovieDetailHeaderView: View {
                 }
                 .padding(.leading, 10)
             }
-            .padding(.top, 170)
+            .padding(.top, viewModel.backdropURL != nil ? 170 : 0)
         }
     }
 }

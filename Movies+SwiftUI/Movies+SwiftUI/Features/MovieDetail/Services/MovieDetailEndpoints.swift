@@ -44,7 +44,7 @@ enum MovieDetailEndpoints {
         let baseUrl = APIConstants.baseURL
         switch self {
         case .fetchDetail(let id):
-            return "\(baseUrl)/movie/\(id)?api_key=\(Keys.Apiv3)&language=\(APIConstants.language)&append_to_response=videos,images&include_image_language=en,null"
+            return "\(baseUrl)/movie/\(id)?api_key=\(Keys.Apiv3)&language=\(APIConstants.language)&append_to_response=videos,images&include_image_language=\(APIConstants.languageShort),null"
         }
     }
 }

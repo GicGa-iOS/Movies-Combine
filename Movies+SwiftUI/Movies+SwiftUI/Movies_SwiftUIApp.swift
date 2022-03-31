@@ -12,6 +12,7 @@ struct Movies_SwiftUIApp: App {
     @StateObject var detailViewModel = MovieDetailViewModel(service: MovieDetailService(networkRequest: NativeRequestable()))
     @StateObject var searchViewModel = SearchViewModel(service: MultiSearchService(networkRequest: NativeRequestable()))
     @StateObject var genresViewModel = GenreModelsViewModel(service: GenreModelService(networkRequest: NativeRequestable()))
+    @StateObject var tvDetailViewModel = TVDetailViewModel(service: FetchTVDetailService(networkRequest: NativeRequestable()))
     var body: some Scene {
         WindowGroup {
             RootView {
@@ -19,6 +20,7 @@ struct Movies_SwiftUIApp: App {
                     .environmentObject(detailViewModel)
                     .environmentObject(searchViewModel)
                     .environmentObject(genresViewModel)
+                    .environmentObject(tvDetailViewModel)
             }
         }
     }
