@@ -12,7 +12,7 @@ struct PopularMoviesList: View {
     ]
 
     var body: some View {
-        ScrollView {
+        ScrollView(showsIndicators: false) {
             LazyVGrid(columns: columns) {
                 reposList
             }
