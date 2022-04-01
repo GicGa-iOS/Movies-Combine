@@ -8,6 +8,8 @@ class MovieDetailViewModel: ObservableObject {
     // MARK: - Private Properties
 
     private let service: MovieDetailService
+    private let formater = CurrencyFormatter(currencyCode: "USD")
+    private let runTimeFormatter = RunTimeFormatter(unitsStyle: .abbreviated)
 
     // MARK: Input
 
@@ -18,8 +20,9 @@ class MovieDetailViewModel: ObservableObject {
     @Published var movieTitle: String = ""
     @Published var backdropURL: URL?
     @Published var posterURL: URL?
-    @Published var popularity: String = ""
+    @Published var runTime: String = ""
     @Published var revenue: String = ""
+    @Published var budget: String = ""
     @Published var voteAverage: String = ""
     @Published var overview: String = ""
     @Published var videos : [DetailResultModel] = []
@@ -90,23 +93,49 @@ class MovieDetailViewModel: ObservableObject {
             .map({ result in
                 switch result{
                 case .success(let data):
-                    return "Popularity: \(data.popularity ?? 0)"
+                    if let runtime = data.runtime {
+                        return runtime == 0
+                        ? ""
+                        : self.runTimeFormatter.getRuntimeFormatted(value: runtime)
+                    }
+                    return "Popularity: \(data.runtime ?? 0)"
                 case .failure(_):
                     return "Popularity: -"
                 }
             })
-            .assign(to: &$popularity)
+            .assign(to: &$runTime)
 
         fetchDetailPublisher
             .map({ result in
                 switch result{
                 case .success(let data):
-                    return "Revenue: \(data.revenue ?? 0)"
+                    if let revenue = data.revenue {
+                        return revenue == 0
+                            ? "Revenue: -"
+                            : "Revenue: \(self.formater.getFormattedCurrency(value: revenue))"
+                    }
+                    return "Revenue: -"
                 case .failure(_):
                     return "Revenue: -"
                 }
             })
             .assign(to: &$revenue)
+
+        fetchDetailPublisher
+            .map({ result in
+                switch result{
+                case .success(let data):
+                    if let budget = data.budget {
+                        return budget == 0
+                        ? "Budget: -"
+                        : "Budget: \(self.formater.getFormattedCurrency(value: data.budget ?? 0))"
+                    }
+                    return "Budget: -"
+                case .failure(_):
+                    return "Budget: -"
+                }
+            })
+            .assign(to: &$budget)
 
         fetchDetailPublisher
             .map { result in

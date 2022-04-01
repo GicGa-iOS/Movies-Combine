@@ -88,6 +88,8 @@
 		AB8DADB327F26C7A00A87780 /* MovieGenreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8DADB227F26C7A00A87780 /* MovieGenreService.swift */; };
 		AB8DADB627F26F2700A87780 /* MovieGenresViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8DADB527F26F2700A87780 /* MovieGenresViewModel.swift */; };
 		ABCCA8C327F5F6AF00E30403 /* TVDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCCA8C227F5F6AF00E30403 /* TVDetailHeaderView.swift */; };
+		ABCCA8C527F6701F00E30403 /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCCA8C427F6701F00E30403 /* CurrencyFormatter.swift */; };
+		ABCCA8C727F6753800E30403 /* RunTimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCCA8C627F6753800E30403 /* RunTimeFormatter.swift */; };
 		ABDA843627EBEDED00FE7AC7 /* Encodable+encode.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDA843527EBEDED00FE7AC7 /* Encodable+encode.swift */; };
 		ABDA843827EBEE2D00FE7AC7 /* NativeRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDA843727EBEE2D00FE7AC7 /* NativeRequestable.swift */; };
 		ABDA843A27EBF9DC00FE7AC7 /* PopularServiceEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDA843927EBF9DB00FE7AC7 /* PopularServiceEndpoints.swift */; };
@@ -197,6 +199,8 @@
 		AB8DADB227F26C7A00A87780 /* MovieGenreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieGenreService.swift; sourceTree = "<group>"; };
 		AB8DADB527F26F2700A87780 /* MovieGenresViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieGenresViewModel.swift; sourceTree = "<group>"; };
 		ABCCA8C227F5F6AF00E30403 /* TVDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVDetailHeaderView.swift; sourceTree = "<group>"; };
+		ABCCA8C427F6701F00E30403 /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
+		ABCCA8C627F6753800E30403 /* RunTimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunTimeFormatter.swift; sourceTree = "<group>"; };
 		ABDA843527EBEDED00FE7AC7 /* Encodable+encode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+encode.swift"; sourceTree = "<group>"; };
 		ABDA843727EBEE2D00FE7AC7 /* NativeRequestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeRequestable.swift; sourceTree = "<group>"; };
 		ABDA843927EBF9DB00FE7AC7 /* PopularServiceEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularServiceEndpoints.swift; sourceTree = "<group>"; };
@@ -414,9 +418,11 @@
 		AB58E93327EA676800CC3FCB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				ABCCA8C427F6701F00E30403 /* CurrencyFormatter.swift */,
+				AB599F7527EA8D1900DB4C8E /* HostingController.swift */,
+				ABCCA8C627F6753800E30403 /* RunTimeFormatter.swift */,
 				AB28A5D227E585720019A330 /* Extensions */,
 				AB58E93427EA679400CC3FCB /* Helper */,
-				AB599F7527EA8D1900DB4C8E /* HostingController.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -791,6 +797,7 @@
 				AB02A4D727EBB58E00EC8C31 /* VideosListView.swift in Sources */,
 				AB85742127F3734000FA8C84 /* _ReadjustingStackView.swift in Sources */,
 				AB85743627F3BC7A00FA8C84 /* NetworkModel.swift in Sources */,
+				ABCCA8C527F6701F00E30403 /* CurrencyFormatter.swift in Sources */,
 				AB81528327ED059D00FE744C /* MultiSearchResultModel.swift in Sources */,
 				AB58E92E27EA5B5700CC3FCB /* View+Placeholder.swift in Sources */,
 				AB28A5D627E585D10019A330 /* Publisher+Dump.swift in Sources */,
@@ -861,6 +868,7 @@
 				AB28A5D127E57CC30019A330 /* ErrorResponse.swift in Sources */,
 				AB599F8527EAA27B00DB4C8E /* SpokenLanguageModel.swift in Sources */,
 				AB8DADAC27F2679900A87780 /* MoviesGenreListModel.swift in Sources */,
+				ABCCA8C727F6753800E30403 /* RunTimeFormatter.swift in Sources */,
 				AB599F7227EA8C8500DB4C8E /* View+statusBarStyle.swift in Sources */,
 				AB58E93D27EA70BB00CC3FCB /* TabViewScreen.swift in Sources */,
 			);
