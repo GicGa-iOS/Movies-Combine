@@ -33,7 +33,7 @@ struct SearcherScreen: View {
         }.searchable(text: $viewModel.searchQuery,
                      placement: .navigationBarDrawer(displayMode: .always),
                      prompt: "Search"
-        )
+        ).disableAutocorrection(true)
     }
 }
 
