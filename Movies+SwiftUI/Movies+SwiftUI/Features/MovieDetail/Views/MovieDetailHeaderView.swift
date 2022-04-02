@@ -13,9 +13,7 @@ struct MovieDetailHeaderView: View {
             }
             HStack {
                 if let url = viewModel.posterURL {
-                    ImageLoader.makeImage(url: url)
-                        .frame(width: 150, height: 230)
-                        .shadow(color: .gray, radius: 5)
+                    PosterView(url: url, network: nil)
                 }
                 VStack(alignment: .leading) {
                     Text(viewModel.movieTitle)

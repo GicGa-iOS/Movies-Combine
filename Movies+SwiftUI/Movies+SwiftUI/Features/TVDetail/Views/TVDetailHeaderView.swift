@@ -14,7 +14,7 @@ struct TVDetailHeaderView: View {
             HStack {
                 if let urlstring = APIConstants.posterBaseURL+(viewModel.tvDetail.posterPath ?? ""),
                    let url = URL(string: urlstring) {
-                    ExtractedView(url: url, network: viewModel.tvDetail.networks?.first)
+                    PosterView(url: url, network: viewModel.tvDetail.networks?.first)
                 }
                 VStack(alignment: .leading) {
                     Text(viewModel.tvDetail.name ?? "")
@@ -46,7 +46,7 @@ struct TVDetailHeaderView_Previews: PreviewProvider {
     }
 }
 
-struct ExtractedView: View {
+struct PosterView: View {
     let url: URL
     let network: NetworkModel?
 
