@@ -26,6 +26,7 @@ struct MovieDetailModel: Codable {
     let voteCount: Int?
     let videos: DetailVideosModel?
     let images: DetailImagesModel?
+    let recommendations: PopularMovieModel?
 
     enum CodingKeys: String, CodingKey {
         case adult
@@ -46,5 +47,6 @@ struct MovieDetailModel: Codable {
         case voteAverage = "vote_average"
         case voteCount = "vote_count"
         case videos, images
+        case recommendations
     }
 }

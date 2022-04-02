@@ -7,6 +7,7 @@ struct PopularMovieResultModel: Codable, Identifiable, Equatable {
     let backdropPath: String?
     let genreIDS: [Int]?
     let id: Int?
+    let mediaType: String?
     let originalLanguage: String?
     let originalTitle, overview: String?
     let popularity: Double?
@@ -20,6 +21,7 @@ struct PopularMovieResultModel: Codable, Identifiable, Equatable {
         case backdropPath = "backdrop_path"
         case genreIDS = "genre_ids"
         case id
+        case mediaType = "media_type"
         case originalLanguage = "original_language"
         case originalTitle = "original_title"
         case overview, popularity
