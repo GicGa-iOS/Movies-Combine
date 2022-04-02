@@ -2,17 +2,17 @@ import SwiftUI
 
 struct TabViewScreen: View {
 
-    @State var selectedTab = 1
+    @State var selectedTab = 0
 
     var body: some View {
 
         NavigationView {
             TabView(selection: $selectedTab) {
 
-                GenresView(useSpecificGenres: nil, enableGenreTapGesture: true, alignment: .center)
+                MultilistScreen()
                     .tabItem {
-                        Image(systemName: "star.bubble")
-                        Text("Upcoming")
+                        Image(systemName: "house")
+                        Text("Home")
                     }
                     .tag(0)
                     .statusBarStyle(.darkContent)
@@ -21,7 +21,7 @@ struct TabViewScreen: View {
 
                 PopularMoviesScreen()
                     .tabItem {
-                        Image(systemName: "theatermasks")
+                        Image(systemName: "play.rectangle.on.rectangle")
                         Text("Popular")
                     }
                     .tag(1)
@@ -39,10 +39,10 @@ struct TabViewScreen: View {
                     .navigationBarHidden(true)
                     .navigationBarTitle("")
 
-                Text("Top Rated")
+                Text("Downloads")
                     .tabItem {
-                        Image(systemName: "flame")
-                        Text("Top Rated")
+                        Image(systemName: "arrow.down.circle")
+                        Text("Downloads")
                     }
                     .tag(3)
                     .statusBarStyle(.darkContent)
